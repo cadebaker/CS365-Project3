@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.mainHeader.setAlignment(QtCore.Qt.AlignCenter)
         self.mainHeader.setObjectName("mainHeader")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(0, 70, 800, 471))
+        self.tabWidget.setGeometry(QtCore.QRect(-10, 90, 800, 481))
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
         font = QtGui.QFont()
@@ -37,10 +37,10 @@ class Ui_MainWindow(object):
         self.classifyLabel.setGeometry(QtCore.QRect(50, 40, 151, 16))
         self.classifyLabel.setObjectName("classifyLabel")
         self.chooseFile = QtWidgets.QPushButton(self.tab)
-        self.chooseFile.setGeometry(QtCore.QRect(80, 70, 75, 23))
+        self.chooseFile.setGeometry(QtCore.QRect(50, 70, 141, 23))
         self.chooseFile.setObjectName("chooseFile")
         self.imageLabel = QtWidgets.QLabel(self.tab)
-        self.imageLabel.setGeometry(QtCore.QRect(270, 22, 461, 231))
+        self.imageLabel.setGeometry(QtCore.QRect(270, 22, 461, 261))
         self.imageLabel.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.imageLabel.setScaledContents(False)
         self.imageLabel.setAlignment(QtCore.Qt.AlignCenter)
@@ -86,7 +86,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Image Classify GUI"))
         self.mainHeader.setText(_translate("MainWindow", "Image Classify GUI"))
         self.classifyLabel.setText(_translate("MainWindow", "Choose File to Classify:"))
         self.chooseFile.setText(_translate("MainWindow", "Select File"))
