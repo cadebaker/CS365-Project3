@@ -7,7 +7,7 @@ pyuic5 Project3UI.ui -o Project3UI.py
 
 
 ### Run Application GUI
-python runGUI.py
+python3 runGUI.py
 
 ### Retrain Code
 python -m scripts.retrain \
