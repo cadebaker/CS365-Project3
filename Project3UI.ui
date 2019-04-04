@@ -36,7 +36,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QTabWidget" name="trainFolderButton">
     <property name="geometry">
      <rect>
       <x>-10</x>
@@ -146,6 +146,45 @@
      <attribute name="title">
       <string>Retrain</string>
      </attribute>
+     <widget class="QPushButton" name="trainingFolderButton">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>60</y>
+        <width>321</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Training Folder</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="runTrainingButton">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>120</y>
+        <width>321</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Run Training</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="trainingResults">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>771</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QLabel" name="namesHeader">
