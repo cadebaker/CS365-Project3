@@ -21,3 +21,6 @@ python -m scripts.retrain \
 ### Classify Image
 python -m scripts.label_image \
     --image=tf_files/IMG_URL
+
+### Sample (Pretrained) tf_files directory
+https://cis.gvsu.edu/~bakercad/ai/tf_files.zip
