@@ -1,7 +1,7 @@
 #Team Information
 Cade Baker, Megan Thomas, Brendan Nahed
 
-# Overview
+## Overview
 This repo contains code for the "TensorFlow for poets 2" series of Google Codelabs.<br/>
 This application can retrain a model using images (JPG, JPEG, PNG) in the following directory structure:<br/>
 |-- Photos Folder<br/>
