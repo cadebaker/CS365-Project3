@@ -8,11 +8,15 @@ from Project3UI import Ui_MainWindow
 sys.path.insert(0, './scripts')
 from label_image_gui import classifyMain
 
-#qtCreatorFile = "Project3UI.ui" # Enter file here.
 
-#Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
-
+"""
+This class handles interaction between the GUI and the backend scripts for
+the Tensorflow classification and training.
+"""
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
+    """
+    Handles connecting the UI elements to the methods below
+    """
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
@@ -24,6 +28,9 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.runTrainingButton.clicked.connect(self.runTrain)
         self.actionExit.triggered.connect(QtCore.QCoreApplication.instance().quit)
 
+    """
+    Method to select individual file for classification
+    """
     def selectFile(self, val2):
         self.resultsDataLabel.setText("")
         global file
@@ -32,9 +39,18 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         pixmap = QPixmap(file).scaledToWidth(461);
         self.imageLabel.setPixmap(pixmap)
 
+    """
+    Converts decimal to percent
+    @param val the value to convert
+    @return the decimal number in percent format
+    """
     def convertToPercent(self, val):
         return "{:.3%}".format(val)
 
+    """
+    Classifies the image using Tensorflow and trained library. Then displays relevant
+    detail link
+    """
     def runClassify(self):
         if(file != ''):
             returnedClassifyData = classifyMain(file)
@@ -66,11 +82,17 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             self.resultsDataLabel.setText("Please select an image")
 
+    """
+    Select the folder for retraining the model
+    """
     def selectFolder(self, val2):
         self.resultsDataLabel.setText("")
         global folder
         folder = str(QFileDialog.getExistingDirectory(self, "Select Directory"))
 
+    """
+    Run the training script and notify user whether or not it was successful.
+    """
     def runTrain(self):
         if(folder != ''):
             print('------ Training Results ------')

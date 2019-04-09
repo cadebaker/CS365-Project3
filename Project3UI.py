@@ -96,8 +96,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Image Classify GUI"))
-        self.mainHeader.setText(_translate("MainWindow", "Image Classify GUI"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Chevrolet RealView Maintenance"))
+        self.mainHeader.setText(_translate("MainWindow", "Chevrolet RealView Maintenance"))
         self.classifyLabel.setText(_translate("MainWindow", "Choose File to Classify:"))
         self.chooseFile.setText(_translate("MainWindow", "Select File"))
         self.imageLabel.setText(_translate("MainWindow", "Select Image"))
