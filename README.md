@@ -1,26 +1,32 @@
 # Overview
-
 This repo contains code for the "TensorFlow for poets 2" series of Google Codelabs.
+This application can retrain a model using images (JPG, JPEG, PNG) in the following directory structure:
+> Photos Folder
+  > Type of Photos Folder
+    > Actual Image
+  > Type of Photos Folder
+    > Actual Image
 
-### Compile Updated .UI File
-pyuic5 Project3UI.ui -o Project3UI.py
+An example of this is:
+> Cars
+  > Camaro
+    > camero1.JPG
+  > Malibu
+    >malibu1.JPEG
+
+Those images are then used to classify other images. All of this is accomplished using the GUI.
+
+### Required Packages:
+NumPy - pip3 install numpy
+TensorFlow - pip3 install --upgrade tensorflow
+Six - pip3 install six
+PyQt5 - pip3 install pyqt5
+Project3UI & label_image_gui (Included)
+Others (likely included): __future__, argparse, collections, datetime, hashlib, os, random, re, sys, tarfile, subprocess, time
 
 
 ### Run Application GUI
 python3 runGUI.py
-
-### Retrain Code
-python -m scripts.retrain \
-  --bottleneck_dir=tf_files/bottlenecks \
-  --model_dir=tf_files/models/"${ARCHITECTURE}" \
-  --summaries_dir=tf_files/training_summaries/"${ARCHITECTURE}" \
-  --output_graph=tf_files/retrained_graph.pb \
-  --output_labels=tf_files/retrained_labels.txt \
-  --image_dir=tf_files/PHOTO_DIR
-
-### Classify Image
-python -m scripts.label_image \
-    --image=tf_files/IMG_URL
 
 ### Sample (Pretrained) tf_files directory
 https://cis.gvsu.edu/~bakercad/ai/tf_files.zip
