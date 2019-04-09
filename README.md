@@ -1,16 +1,16 @@
 # Overview
 This repo contains code for the "TensorFlow for poets 2" series of Google Codelabs.<br/>
-This application can retrain a model using images (JPG, JPEG, PNG) in the following directory structure:<br/>>
-|-- Photos Folder
-    |-- Type of Photos Folder
-        |-- Actual Image
+This application can retrain a model using images (JPG, JPEG, PNG) in the following directory structure:<br/>
+|-- Photos Folder<br/>
+    |-- Type of Photos Folder<br/>
+        |-- Actual Image<br/>
 
-An example of this is:<br/>>
-|-- Cars
-    |-- Camaro
-        |-- camaro1.JPG
+An example of this is:<br/>
+|-- Cars<br/>
+    |-- Camaro<br/>
+        |-- camaro1.JPG<br/>
 
-Those images are then used to classify other images. All of this is accomplished using the GUI.
+Those images are then used to classify other images. All of this is accomplished using the GUI.<br/>
 
 ### Required Packages:
 NumPy - pip3 install numpy<br/>
