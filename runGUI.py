@@ -38,11 +38,31 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def runClassify(self):
         if(file != ''):
             returnedClassifyData = classifyMain(file)
-            print("------ Results ------")
+            print("------ Classify Results ------")
             template = "{} {:0.5f}"
             for i in range(len(returnedClassifyData)):
                 print(template.format(returnedClassifyData[i][0], returnedClassifyData[i][1]))
-            self.resultsDataLabel.setText("The top result was " + returnedClassifyData[0][0] + " with a probability of " + self.convertToPercent(returnedClassifyData[0][1]))
+            viewDetails = ""
+            self.resultsDataLabel.setOpenExternalLinks(True)
+            if(returnedClassifyData[0][0] == "camaro"):
+                viewDetails = "<a href=\"https://www.chevrolet.com/performance/camaro-sports-car/build-and-price/features/trims/table?section=Mechanical&styleOne=401406\"> <font face=verdana font-size=8 color=black>View Details</font> </a>"
+                
+            elif(returnedClassifyData[0][0] == "corvette"):
+                viewDetails = "<a href=\"https://www.chevrolet.com/performance/corvette-stingray-sports-car/build-and-price/features/trims/table?section=Mechanical&styleOne=397566\"> <font face=verdana font-size=8 color=black>View Details</font> </a>"
+                
+            elif(returnedClassifyData[0][0] == "silverado"):
+                viewDetails = "<a href=\"https://www.chevrolet.com/trucks/silverado-1500-pickup-truck/build-and-price/features/trims/table?section=Mechanical&styleOne=399782\"> <font face=verdana font-size=8 color=black>View Details</font> </a>"
+                
+            elif(returnedClassifyData[0][0] == "malibu"):
+                viewDetails = "<a href=\"https://www.chevrolet.com/cars/malibu-mid-size-car/build-and-price/features/trims/table?section=Mechanical&styleOne=402209\"> <font face=verdana font-size=8 color=black>View Details</font> </a>"
+                
+            elif(returnedClassifyData[0][0] == "tahoe"):
+                viewDetails = "<a href=\"https://www.chevrolet.com/suvs/tahoe-full-size-suv/build-and-price/features/trims/table?section=Mechanical&styleOne=400414\"> <font face=verdana font-size=8 color=black>View Details</font> </a>"
+
+            elif(returnedClassifyData[0][0] == "traverse"):
+                viewDetails = "<a href=\"https://www.chevrolet.com/suvs/traverse-mid-size-suv/build-and-price/features/trims/table?section=Highlights&styleOne=399663\"> <font face=verdana font-size=8 color=black>View Details</font> </a>"
+            
+            self.resultsDataLabel.setText("The top result was " + returnedClassifyData[0][0] + " with a probability of " + self.convertToPercent(returnedClassifyData[0][1]) + '. ' + viewDetails)
         else:
             self.resultsDataLabel.setText("Please select an image")
 
